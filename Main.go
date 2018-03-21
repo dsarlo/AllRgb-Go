@@ -39,6 +39,7 @@ func main() { //Builds the unique color array (24 bit) and calls the method of y
 
 	img := *image.NewRGBA(image.Rect(0, 0, width, height))
 
+	//SELECT WHICH FUNCTION TO RUN THAT WILL CREATE THE IMAGE
 	//randomNonUniquePic(&img, colorArray)
 	//randomUniquePic(&img, colorArray, false)
 	uniqueFIFOPic(&img, colorArray)
