@@ -4,7 +4,6 @@ import (
 	"image"
 	"image/color"
 	"image/png"
-	"math/rand"
 	"os"
 )
 
@@ -34,13 +33,15 @@ func main() {
 	width := 4096
 	height := 4096
 	img := image.NewRGBA(image.Rect(0, 0, width, height))
-	max24Bit := 16777216
+	//max24Bit := 16777216
+	iterator := 0
 
 	for h := 0; h < height; h++ {
 		for w := 0; w < width; w++ {
-			rand := rand.Intn(max24Bit)
-			chosenColor := colorArray[rand]
+			//rand := rand.Intn(max24Bit)
+			chosenColor := colorArray[iterator]
 			img.Set(h, w, color.RGBA{chosenColor.red, chosenColor.green, chosenColor.blue, 255})
+			iterator++
 		}
 	}
 
